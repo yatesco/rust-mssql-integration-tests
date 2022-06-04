@@ -1,0 +1,25 @@
+[package]
+name = "rust-mssql-integration-tests"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1"
+anyhow = "1.0"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+tokio-util = { version = "0.7", features = ["compat"] }
+pretty_env_logger = "0.4"
+
+# MSSQL
+futures = "0.3"
+futures-util = "0.3"
+tiberius = { version = "0.9", default-features = false, features = ["chrono", "tokio", "rustls"] }
+
+bb8 = "0.8"
+bb8-tiberius = "0.11"
+
+[dev-dependencies]
+testcontainers = "0.14"
+serial_test = "0.6"
